@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class caculateOccurance2 {
     public static void main(String[] args) {
 
@@ -29,4 +32,41 @@ public class caculateOccurance2 {
 
         return count;
     }
+
+    public static String[] packConsecutiveDuplicates(String[] array) {
+        List removed = new ArrayList();
+        for(int i = 0; i < array.length; i++){
+            if(i + 1 != array.length) {
+                String next = array[i];
+                while(array[i].equals(array[i+1])){
+                    next += array[i];
+                    i++;
+                    if (i + 1 == array.length)
+                    {break;}
+                }
+                removed.add(next);
+            } else {
+                removed.add(array[i]);
+            }
+        }
+        String[] combined = new String[removed.size()];
+        removed.toArray(combined);
+        return combined;
+    }
+    public static String[] packConsecutiveDuplicates2(String[] array) {
+        List<String> arrList = new ArrayList<>();
+        String str = array[0];
+        for (int i = 1; i < array.length; i ++) {
+            if (array[i].equals(array[i-1])) {
+                str += array[i];
+            } else {
+                arrList.add(str);
+                str = array[i];
+            }
+        }
+        arrList.add(str);
+        String [] packDups = arrList.toArray(new String[arrList.size()]);
+        return packDups;
+    }
 }
+
