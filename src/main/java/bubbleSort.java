@@ -5,14 +5,17 @@ public class bubbleSort {
 
         bubbleSort b = new bubbleSort();
         int[] array = new int[]{10, 3, 4, 5, 6, 6, 7, 8, 98, 76, 54, 1, 32, 6};
+
         b.BubbleSort(array);
+
+        b.bubblesort(array);
+
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
 
 
     }
-
 
 
 
@@ -28,6 +31,7 @@ public class bubbleSort {
 //            swap = true;
 //
 //        }
+
 //
     //Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order
     public void BubbleSort(int[] anyarray){
@@ -47,12 +51,19 @@ public class bubbleSort {
         }
     }
 //    It can be optimized by stopping the algorithm if inner loop didn’t cause any swap.
+
+
+//        }
+
     public void bubblesort(int[] unsorted) {
         boolean swapped = true;
         while (swapped) {
             swapped = false;
 
             for (int i = 0; i < unsorted.length - 1; i++) {
+
+
+
 
                 if (unsorted[i] > unsorted[i + 1]) {
                     int temp = unsorted[i];
@@ -62,6 +73,7 @@ public class bubbleSort {
                 }
 
             }
+
 
         }
     }
@@ -87,5 +99,8 @@ public class bubbleSort {
             k--;
         }
         return arr;
+
+        }
+
     }
-}
+
